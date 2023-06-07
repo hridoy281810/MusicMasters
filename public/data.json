@@ -1,0 +1,135 @@
+[
+    {
+      "class_name": "Piano Basics",
+      "instructor_name": "John Smith",
+      "number_of_students": 10,
+      "category": "therapeutic",
+      "class_image_url": "https://i.postimg.cc/3Rw9PfWS/calss4.png",
+      "instructor_image_url": "https://i.postimg.cc/c4fHQ9Cn/music-instructor1.jpg",
+      "instructor_email": "john@example.com",
+      "available_seats": 5,
+      "price": 50
+    },
+    {
+      "class_name": "Guitar Fundamentals",
+      "instructor_name": "Sarah Johnson",
+      "number_of_students": 8,
+      "category": "popular",
+      "class_image_url": "https://i.postimg.cc/3Rw9PfWS/calss4.png",
+      "instructor_image_url": "https://i.postimg.cc/8k9DXh9m/music-instructor10.jpg",
+      "instructor_email": "sarah@example.com",
+      "available_seats": 2,
+      "price": 40
+    },
+    {
+      "class_name": "Vocal Training",
+      "instructor_name": "Michael Davis",
+      "number_of_students": 12,
+      "category": "popular",
+      "class_image_url": "https://i.postimg.cc/BnxhD1dg/class10.png",
+      "instructor_image_url": "https://i.postimg.cc/Y0G7q9GF/music-instructor11.jpg",
+      "instructor_email": "michael@example.com",
+      "available_seats": 3,
+      "price": 60
+    },
+    {
+      "class_name": "Drum Workshop",
+      "instructor_name": "Emily Wilson",
+      "number_of_students": 6,
+      "category": "popular",
+      "class_image_url": "https://i.postimg.cc/PxFKhbwt/class2.png",
+      "instructor_image_url": "https://i.postimg.cc/mD6RsMDR/music-instructor12.jpg",
+      "instructor_email": "emily@example.com",
+      "available_seats": 4,
+      "price": 45
+    },
+    {
+      "class_name": "Violin Lessons",
+      "instructor_name": "David Thompson",
+      "number_of_students": 5,
+      "category": "popular",
+      "class_image_url": "https://i.postimg.cc/9XDH9J1Y/class3.png",
+      "instructor_image_url": "https://i.postimg.cc/FHmKGykn/music-instructor2.jpg",
+      "instructor_email": "david@example.com",
+      "available_seats": 1,
+      "price": 55
+    },
+    {
+      "class_name": "Music Theory",
+      "instructor_name": "Laura Adams",
+      "number_of_students": 15,
+      "category": "popular",
+      "class_image_url": "https://i.postimg.cc/x8J5dkvL/class5.png",
+      "instructor_image_url": "https://i.postimg.cc/PxcGcj35/music-instructor3.jpg",
+      "instructor_email": "laura@example.com",
+      "available_seats": 10,
+      "price": 30
+    },
+    {
+        "class_name": "Saxophone Mastery",
+        "instructor_name": "Thomas Anderson",
+        "number_of_students": 7,
+        "category": "popular",
+        "class_image_url": "https://i.postimg.cc/1XfCN7Qn/class6.png",
+        "instructor_image_url": "https://i.postimg.cc/MTX2dTYL/music-instructor4.jpg",
+        "instructor_email": "thomas@example.com",
+        "available_seats": 3,
+        "price": 65
+      },
+      {
+        "class_name": "Bass Guitar Techniques",
+        "instructor_name": "Jessica Roberts",
+        "number_of_students": 9,
+        "category": "creative",
+        "class_image_url": "https://i.postimg.cc/nryk9H2g/class7.png",
+        "instructor_image_url": "https://i.postimg.cc/Kc6j3SGb/music-instructor5.jpg",
+        "instructor_email": "jessica@example.com",
+        "available_seats": 4,
+        "price": 50
+      },
+      {
+        "class_name": "Songwriting Workshop",
+        "instructor_name": "Adam Walker",
+        "number_of_students": 12,
+        "category": "creative",
+        "class_image_url": "https://i.postimg.cc/ZqHVszYv/class8.png",
+        "instructor_image_url": "https://i.postimg.cc/4nkDf1TC/music-instructor6.jpg",
+        "instructor_email": "adam@example.com",
+        "available_seats": 6,
+        "price": 40
+      },
+      {
+        "class_name": "Music Production Masterclass",
+        "instructor_name": "Sophie Mitchell",
+        "number_of_students": 10,
+        "category": "specialized",
+        "class_image_url": "https://i.postimg.cc/Bv4mCn3G/class9.png",
+        "instructor_image_url": "https://i.postimg.cc/zG1N8qJL/music-instructor8.jpg",
+        "instructor_email": "sophie@example.com",
+        "available_seats": 2,
+        "price": 75
+      },
+      {
+        "class_name": "Gospel Choir Ensemble",
+        "instructor_name": "Matthew Brown",
+        "number_of_students": 8,
+        "category": "popular",
+        "class_image_url": "https://i.postimg.cc/9XDH9J1Y/class3.png",
+        "instructor_image_url": "https://i.postimg.cc/BbKWfVkc/music-instructor9.jpg",
+        "instructor_email": "matthew@example.com",
+        "available_seats": 4,
+        "price": 55
+      },
+      {
+        "class_name": "Percussion Techniques",
+        "instructor_name": "Olivia Thompson",
+        "number_of_students": 6,
+        "category": "creative",
+        "class_image_url": "https://i.postimg.cc/x8J5dkvL/class5.png",
+        "instructor_image_url": "https://i.postimg.cc/BbKWfVkc/music-instructor9.jpg",
+        "instructor_email": "olivia@example.com",
+        "available_seats": 3,
+        "price": 50
+      }
+  ]
+  

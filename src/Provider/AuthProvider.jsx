@@ -32,21 +32,21 @@ const AuthProvider = ({children}) => {
     }
 
     const updateUserProfile = (name,photo)=>{
-     return updateProfile(auth,currentUser,{
-        displayName: name,
-        photoURL: photo,
-     })
-    }
+        setLoading(true)
+      return updateProfile(auth.currentUser, {
+        displayName: name, photoURL: photo
+      })
+       }
 
-    useEffect(()=>{
-        const unsubscribe = onAuthStateChanged(auth,loggedUser=>{
-            setUser(loggedUser)
-            setLoading(false)
-        })
-        return () =>{
-            return unsubscribe()
-        }
-    },[])
+       useEffect(()=>{
+        const unsubscribe =  onAuthStateChanged(auth,currentUser =>{
+             setUser(currentUser);
+             
+         });
+         return ()=>{
+             return unsubscribe();
+         }
+        },[])
     const authInfo = {
         user,
         createUser,
