@@ -12,9 +12,9 @@ const NavBar = () => {
       }
     const Options = <>
     <li><Link to='/'>Home</Link></li>
-    <li><Link to='/'>Instructor</Link></li>
-    <li><Link to='/'>Classes</Link></li>
-    <li><Link to='/'>Dashboard </Link></li>
+    <li><Link to='/instructors'>Instructor</Link></li>
+    <li><Link to='/classes'>Classes</Link></li>
+    <li><Link to='/selected'>Dashboard </Link></li>
    </>
 
     return (
