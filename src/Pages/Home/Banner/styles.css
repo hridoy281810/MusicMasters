@@ -1,0 +1,25 @@
+.slider-bg {
+  position: relative;
+    background-image: url('../../../assets/banner-slider/Sound.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+  }
+.slider-bg2 {
+    background-image: url('../../../assets/banner-slider/Shapes.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+  }
+.slider-bg3 {
+    background-image: url('../../../assets/banner-slider/Meteor.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+  }
+.slider-bg4 {
+    background-image: url('../../../assets/banner-slider/Hexagon.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+  }
