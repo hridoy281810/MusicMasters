@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import useAuth from '../../Hooks/useAuth';
+import useAuth from '../../api2/useAuth';
 import { useForm } from 'react-hook-form';
 import Swal from 'sweetalert2';
 import GoogleLogin from '../Shear/GoogleLogin/GoogleLogin';

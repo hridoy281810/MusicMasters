@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import useAuth from '../../../Hooks/useAuth';
+import useAuth from '../../../api2/useAuth';
 const NavBar = () => {
     const {user,logOut} = useAuth()
     const handleLogOut = () => {
@@ -14,7 +14,7 @@ const NavBar = () => {
     <li><Link to='/'>Home</Link></li>
     <li><Link to='/instructors'>Instructor</Link></li>
     <li><Link to='/classes'>Classes</Link></li>
-    <li><Link to='/selected'>Dashboard </Link></li>
+    <li><Link to='/dashboard/mySelected'>Dashboard </Link></li>
    </>
 
     return (

@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
-import useAuth from '../../Hooks/useAuth';
+import useAuth from '../../api2/useAuth';
 import { selectClass } from '../../api/selected';
+import useMySelected from '../../api2/useMySelected';
 
 const ClassesPageCard = ({cls}) => {
     const {user,role} = useAuth()
+    const [, refetch] = useMySelected()
     const  {_id,class_image_url,available_seats,instructor_name,instructor_email,category,number_of_students,price,class_name,instructor_image_url} = cls
 
     const [select,setSelect] = useState({
@@ -37,7 +38,10 @@ const ClassesPageCard = ({cls}) => {
        selectClass(select)
        .then(data => {
         console.log(data)
-        Swal.fire("Class selected!")
+         if(data.insertedId){
+          refetch();
+          Swal.fire("Class selected!")
+         }
        })
        .catch(error=>{
         console.log(error)

@@ -6,6 +6,9 @@ import Login from "../Pages/Login/Login";
 import Instructors from "../Pages/Instructors/Instructors";
 import ClassesPage from "../Pages/ClassesPage/ClassesPage";
 import MySelectedClasses from "../Pages/Dashboard/StudentDashboard/MySelectedClasses";
+import DashboardLayout from "../Layout/DashboardLayout";
+import PrivetRoute from "../Provider/PrivetRoute";
+import ManageUsers from "../Pages/Dashboard/AdminDashboard/ManageUsers/manageUsers";
 
 export const router = createBrowserRouter([
        {
@@ -36,7 +39,25 @@ export const router = createBrowserRouter([
             {
          path:'selected',
          element:<MySelectedClasses></MySelectedClasses>
-            }
+            },
+            {
+                path: 'dashboard',
+               element:<PrivetRoute><DashboardLayout></DashboardLayout></PrivetRoute>,
+               children: [
+                {
+                    path: 'mySelected',
+                    element:<MySelectedClasses></MySelectedClasses>
+                },
+                {
+                    path:'allUsers',
+                    element: <ManageUsers></ManageUsers>
+                }
+
+               ]
+                
+               }
+
         ]
-       }
+       },
+      
 ])

@@ -1,5 +1,5 @@
 import React from 'react';
-import useAuth from '../../../Hooks/useAuth';
+import useAuth from '../../../api2/useAuth';
 import { useLocation, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import { FcGoogle } from "react-icons/fc";

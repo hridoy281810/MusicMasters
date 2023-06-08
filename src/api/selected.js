@@ -24,8 +24,8 @@ export const selectClass = async(selectData) => {
 //     return data;
 // }
 // Get all selected class for a user by email
-export const getSelectedClass = async(email) =>{
-    const res = await fetch(`http://localhost:5000/selected?email=${email}`)
-     const myClasses = await res.json()
-     return myClasses;
- }
+// export const getSelectedClass = async(email) =>{
+//     const res = await fetch(`http://localhost:5000/selected?email=${email}`)
+//      const myClasses = await res.json()
+//      return myClasses;
+//  }

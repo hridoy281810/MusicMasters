@@ -5,12 +5,12 @@ import Footer from '../Pages/Shear/Footer/Footer';
 
 const MainLayout = () => {
     const location = useLocation()
-    const onNavBarFooter = location.pathname.includes('login') || location.pathname.includes('registration')
+    // const onNavBarFooter = location.pathname.includes('login') || location.pathname.includes('registration')
     return (
         < >
-           {onNavBarFooter || <NavBar></NavBar>}
+            <NavBar></NavBar>
            <div className='container min-h-[calc(100vh-220px)]'> <Outlet></Outlet></div>
-          {onNavBarFooter || <Footer></Footer>}
+         <Footer></Footer>
         </>
     );
 };

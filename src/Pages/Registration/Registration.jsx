@@ -1,7 +1,7 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import { Link, useNavigate } from 'react-router-dom';
-import useAuth from '../../Hooks/useAuth';
+import useAuth from '../../api2/useAuth';
 import Swal from 'sweetalert2';
 import GoogleLogin from '../Shear/GoogleLogin/GoogleLogin';
 
@@ -18,7 +18,7 @@ const Registration = () => {
           console.log(loggedUser)
           updateUserProfile(data.name, data.photoURL)
             .then(() => {
-              const saveUser = { name: data.name, email: data.email,role: 'student' }
+              const saveUser = { name: data.name, email: data.email,role: 'student' ,photo: data.photoURL}
               console.log(saveUser)
               fetch(`http://localhost:5000/users`, {
                 method: 'POST',

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import useAuth from '../../Hooks/useAuth';
+import useAuth from '../../api2/useAuth';
 import { getAllClasses } from '../../api/classes';
 import Loader from '../../components/Loader';
 import ClassesPageCard from './ClassesPageCard';
