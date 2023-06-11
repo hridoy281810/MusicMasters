@@ -1,14 +1,28 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Banner from '../Banner/Banner';
 import PopularSection from '../popularSection/PopularSection';
 import PopularClassesSection from '../PopularClassesSection/PopularClassesSection';
 
 const Home = () => {
+    const [darkTheme, setDarkTheme] = useState(false);
+    const themeClass = darkTheme ? ' bg-black' : 'bg-white';
+    const toggleTheme = () => {
+        setDarkTheme(!darkTheme);
+      };
     return (
-        <div>
+        <div className={`${themeClass}`}>
            <Banner />
            <PopularClassesSection></PopularClassesSection>
            <PopularSection></PopularSection>
+
+        <div className='flex justify-center py-8'>
+        {darkTheme ? (
+                  <div><input onClick={toggleTheme} type="checkbox" className="toggle" checked /></div>
+              ) : (
+               
+                <input onClick={toggleTheme} type="checkbox" className="toggle" checked />
+              )}
+        </div>
         </div>
     );
 };

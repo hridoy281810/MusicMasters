@@ -2,7 +2,6 @@ import React from 'react';
 import useAuth from '../api2/useAuth';
 import { Navigate, useLocation } from 'react-router-dom';
 import Loader from '../components/Loader';
-import useAdmin from '../api2/useAdmin';
 import useInstructor from '../api2/useInstructor';
 
 const InstructorOnlyRoutes = ({children}) => {

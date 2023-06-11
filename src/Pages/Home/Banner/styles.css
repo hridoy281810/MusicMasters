@@ -23,6 +23,9 @@
     background-position: center;
     height: 100vh;
   }
+
+@media screen and (max-width:576px) {
   .banner-p-hidden{
     display:none;
+}
 }

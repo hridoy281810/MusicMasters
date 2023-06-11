@@ -26,7 +26,7 @@ const PopularClassesSection = () => {
     return (
         <>
              <Heading heading={"popular classes "} />
-            <div className='grid grid-cols-1  md:grid-cols-2 gap-2 md:gap-4 lg:gap-14 xl:gap-20'>
+            <div className='grid grid-cols-1 md:gap-8 md:grid-cols-2 md:me-28 md:ms-[-40px]'>
                 {
                     classes.map(cls => <PopularClassesSectionCard key={cls._id} cls={cls} />)
                 }

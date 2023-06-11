@@ -61,7 +61,7 @@ const ManageUsers = () => {
     return (
        <>
        <SectionTitle heading={"Admin Manage All Users"} />
-        <div className="w-full p-10">
+        <div className="w-full p-4 md:p-10">
       <div className='overflow-x-auto'> 
       <table className="table  sm:min-w-full sm:table-auto rounded-lg border">
           {/* head */}

@@ -2,8 +2,12 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import useAuth from '../../../api2/useAuth';
 import logo from '../../../assets/logo/logopng.png'
+import useAdmin from '../../../api2/useAdmin';
+import useInstructor from '../../../api2/useInstructor';
 const NavBar = () => {
     const {user,logOut} = useAuth()
+    const [isAdmin] = useAdmin()
+    const [isInstructor] = useInstructor()
     const handleLogOut = () => {
         logOut()
           .then()
@@ -11,11 +15,40 @@ const NavBar = () => {
             console.log(error.message)
           })
       }
+
+      // adminHome,studentHome,instructorHome
+      // <li><Link to={isAdmin ? '/dashboard/adminHome': isInstructor ?  '/dashboard/userHome': ''}>Dashboard</Link></li>
     const Options = <>
+    {/* <li><Link to='/'>Home</Link></li>
+    <li><Link to='/instructors'>Instructor</Link></li>
+    <li><Link to='/classes'>Classes</Link></li> */}
+     {isAdmin ?  (<>
     <li><Link to='/'>Home</Link></li>
     <li><Link to='/instructors'>Instructor</Link></li>
     <li><Link to='/classes'>Classes</Link></li>
-     {user &&   <li><Link to='/dashboard/mySelected'>Dashboard </Link></li>}
+ <li><Link to='/dashboard/adminHome'> Dashboard</Link></li></>) : 
+( <> {isInstructor  ? ( <> 
+ <li><Link to='/'>Home</Link></li>
+    <li><Link to='/instructors'>Instructor</Link></li>
+    <li><Link to='/classes'>Classes</Link></li>
+<li><Link to='/dashboard/instructorHome'> Dashboard</Link></li></>)  :
+
+ (<>
+  {user? (<>
+    <li><Link to='/'>Home</Link></li>
+    <li><Link to='/instructors'>Instructor</Link></li>
+    <li><Link to='/classes'>Classes</Link></li>
+ <li><Link to='/dashboard/studentHome'>Dashboard</Link></li>
+  </>): (<>
+    <li><Link to='/'>Home</Link></li>
+    <li><Link to='/instructors'>Instructor</Link></li>
+    <li><Link to='/classes'>Classes</Link></li>
+  </>)}</>) }</>
+)}
+
+
+  
+     
    </>
 
     return (

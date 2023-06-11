@@ -1,11 +1,20 @@
 import React from 'react';
+import { animated, useSpring } from '@react-spring/web'
+
 
 const PopularClassesSectionCard = ({cls}) => {
     const  {class_image_url,available_seats,instructor_name,instructor_email,category,number_of_students,price,class_name} = cls
- 
+    const springs = useSpring({
+        from: { x: 0 },
+        to: { x: 100 },
+      })
     return (
         <>
-        <div className='md:flex border-e-2 md:mb-2 mb-5 lg:mb-2'>
+   
+        <animated.div   style={{
+        ...springs,
+      }} className='md:flex border-e-2 md:mb-2 mb-5 lg:mb-2'>
+        
             <img className='w-64 h-44 shadow rounded-lg  mb-2' src={class_image_url} alt="" />
             <div className='flex flex-col md:ms-8'>
             <div className='flex items-center gap-6'>
@@ -18,8 +27,8 @@ const PopularClassesSectionCard = ({cls}) => {
             </div>
             </div>
             
-        </div>
-        
+        </animated.div>
+     
         
         </>
     );

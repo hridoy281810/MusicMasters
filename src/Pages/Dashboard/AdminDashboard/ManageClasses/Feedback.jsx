@@ -38,7 +38,7 @@ const Feedback = ({status,_id}) => {
           Swal.fire({
             position: 'top-end',
             icon: 'warning',
-            title: `Feedback not allowed for this class! go first approve/deny`,
+            title: `Feedback not allowed for this class! When you deny the class then you send feedback`,
             showConfirmButton: false,
             timer: 1500,
           });
