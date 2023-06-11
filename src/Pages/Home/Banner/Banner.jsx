@@ -4,7 +4,7 @@ import Slider from './Slider';
 
 const Banner = () => {
     return (
-        <div>
+        <div >
            <Slider></Slider>
         </div>
     );

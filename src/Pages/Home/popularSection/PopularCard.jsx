@@ -3,7 +3,7 @@ import React from 'react';
 const PopularCard = ({cls}) => {
     const  {instructor_image_url,instructor_name,instructor_email,category,number_of_students} = cls
     return (
-        <div className="card w-96 bg-base-100 shadow-xl ">
+        <div className="card w-72 md:w-auto    bg-base-100 shadow-xl ">
   <figure className="px-10 pt-10 rounded h-[202px]">
     <img  src={instructor_image_url} alt="Shoes" className="rounded-xl w-80  h-[202px]" />
   </figure>

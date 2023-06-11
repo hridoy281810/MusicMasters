@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { getAllClasses } from '../../api/classes';
+import { getAllClasses, getAllInstructors } from '../../api/classes';
 import Loader from '../../components/Loader';
 import Heading from '../../components/Heading';
 import InstructorsCard from './InstructorsCard';
@@ -10,7 +10,7 @@ const Instructors = () => {
 
     useEffect(()=>{
         setLoading(true)
-        getAllClasses()
+        getAllInstructors()
         .then(data => {
             setInstructors(data)
             setLoading(false)

@@ -6,12 +6,11 @@ export const getAllClasses = async()=>{
     console.log(classes)
     return classes;
 }
-// export const getAllInstructors = async(email)=>{
-//     const res = await fetch(`http://localhost:5000/anis/${email}`)
-//     const classes = await res.json()
-//     console.log(classes)
-//     return classes;
-// }
+export const getAllInstructors = async()=>{
+    const res = await fetch(`http://localhost:5000/instructors`)
+    const classes = await res.json()
+    return classes;
+}
 export const getInstructorsClasses  = async()=>{
     const res = await fetch(`http://localhost:5000/classes/popular`)
     const popularClasses = await res.json()
