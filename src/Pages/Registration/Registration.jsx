@@ -48,7 +48,7 @@ const Registration = () => {
   return (
     <>
       <div className=" md:p-12 ">
-        <div className="shadow-2xl bg-base-100 flex-shrink-0 w-full  rounded-2xl ">
+        <div className="shadow-2xl bg-base-100 flex-shrink-0 w-full  rounded-2xl  border-2 border-dashed border-success">
           <h1 className='text-center mt-4 text-3xl font-bold '>Registration Now!</h1>
           <div className=" ">
             <form onSubmit={handleSubmit(onSubmit)} className="card-body">
@@ -73,7 +73,7 @@ const Registration = () => {
                   </label>
                   <input type="password" {...register("password", {
                     required: true, minLength: 6, maxLength: 20,
-                    pattern: /(?=.*[@$!%*#?&])(?=.*[A-Z]){6,}/
+                    pattern: /(?=.*[@$!%*#?&])(?=.*[A-Z])/
                   })} name='password' placeholder="password" className="input input-bordered" />
                   {errors.password?.type === 'required' && <p className='text-red-600'>Password is required</p>}
                   {errors.password?.type === 'minLength' && <p className='text-red-600'>Password must be 6 characters</p>}

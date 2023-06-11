@@ -67,12 +67,12 @@ ManageClassesCard = ({cls,refetch}) => {
       };
    
     return (
-        <div className=" flex-col lg:flex-row">
+        <div className=" flex-col lg:flex-row mb-8 md:mb-2">
           <img src={class_image_url} className="w-full h-52 rounded-lg shadow" />
           <div>
-            <h1 className="text-4xl font-bold">{class_name}</h1>
-            <p className="pt-2 text-2xl font-semibold text-slate-600">Instructor Name: {instructor_name}</p>
-            <p className="pt-2 text-xl font-semibold text-slate-600">Instructor Email: {instructor_email}</p>
+            <h1 className="text-4xl w-[280px] md:w-full font-bold">{class_name}</h1>
+            <p className="pt-2 text-2xl w-[280px] md:w-full  font-semibold text-slate-600">Instructor Name: {instructor_name}</p>
+            <p className="pt-2 w-[280px] md:w-full  text-[12px] md:text-xl lg:text-xl font-semibold text-slate-600">Instructor Email: {instructor_email}</p>
             <p className="pt-2 text-xl font-semibold text-slate-600">Available Seats: {available_seats}</p>
             <p className="pt-2 text-xl font-semibold text-slate-600">Price: ${price}</p>
             <p className="pt-2 text-xl font-semibold text-slate-600">Status: {status}</p>

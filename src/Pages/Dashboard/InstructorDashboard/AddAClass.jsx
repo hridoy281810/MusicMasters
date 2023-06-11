@@ -114,7 +114,7 @@ const AddAClass = () => {
              </div> 
 
     <div className="form-control  mt-6">
-              <input type='submit' className="btn btn-block btn-success" value={'Registration'} />
+              <input type='submit' className="btn btn-block btn-success" value={'Add Now'} />
             </div>
           </form>
           </div>

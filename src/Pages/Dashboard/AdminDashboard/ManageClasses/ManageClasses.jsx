@@ -21,7 +21,7 @@ const ManageClasses = () => {
     return (
         <div>
             <SectionTitle heading={"Admin Manage Classes"} />
-          <div className='grid grid-cols-1 md:grid-cols-2 gap-2  lg:gap-14 xl:gap-20 mb-8'>
+          <div className='grid grid-cols-1 md:grid-cols-2   xl:gap-20 mb-8 p-10 border-2 border-dashed border-success'>
                 {
                     classes.map(cls => <ManageClassesCard key={cls._id}   cls={cls} refetch={refetch} />)
                 }

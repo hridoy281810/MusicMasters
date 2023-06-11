@@ -19,20 +19,35 @@ const Feedback = ({status,_id}) => {
     const saveFeedback ={
         email,feedback,adminName:user?.displayName,photo:user?.displayURL,status: status, classId: _id
     }
+
     addAdminFeedback(saveFeedback)
     .then(data=>{
         console.log(data)
-        setLoading(false)
-        Swal.fire({
+        if(data.modifiedCount > 0){
+          Swal.fire({
             position: 'top-end',
             icon: 'success',
             title: `send feedback successfully!`,
             showConfirmButton: false,
             timer: 1500,
           });
+          setLoading(false)
+          setIsOpen(false)
+        }
+        else{
+          Swal.fire({
+            position: 'top-end',
+            icon: 'warning',
+            title: `Feedback not allowed for this class! go first approve/deny`,
+            showConfirmButton: false,
+            timer: 1500,
+          });
+        }
+       
     })
     .catch(error=>{
-        console.log(error)
+        console.log(error.message)
+      
     })
 
  }  
@@ -53,7 +68,7 @@ const Feedback = ({status,_id}) => {
           onClick={openModal}
           className="btn btn-primary btn-wide"
         >
-          Open dialog
+          Send Feedback
         </button>
       </div>
 
@@ -92,7 +107,7 @@ const Feedback = ({status,_id}) => {
                   </Dialog.Title>
                   <div className="mt-2">
                     
-           <form onSubmit={handleFeedback}>
+           <form onSubmit={handleFeedback} className=''>
            <div className="form-control">
           <label className="label">
             <span className="label-text">Admin Email</span>
@@ -106,16 +121,16 @@ const Feedback = ({status,_id}) => {
           <textarea type="text" name='feedback' placeholder="write the approved/denied reason" className="input input-bordered p-4"  required/>
         </div>
         <div className="mt-4 flex gap-6">
-                    <input type="submit" className='btn btn-small btn-success' value='Send Instructor' />
-                    <button className='btn btn-small btn-secondary'
+                    <input type="submit" className='btn btn-block btn-success' value='Send Instructor' />
+                   
+           
+                  </div>
+           </form>
+           <button className='btn btn-secondary btn-block btn-outline mt-2'
                       onClick={closeModal}
                     >
                       Close Modal
                     </button>
-           
-                  </div>
-           </form>
-                   
                   </div>
 
                  

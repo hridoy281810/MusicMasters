@@ -34,7 +34,9 @@ const NavBar = () => {
     </div>
     <div className='md:inline-flex  justify-center items-center '>
     <img  src={logo} className='w-16 md:w-28 lg:28 banner-p-hidden' alt="" />
-    <Link to='/'><p className="text-[12px] md:normal-case md:text-xl font-semibold md:font-bold text-success ">MusicMasters</p></Link>
+    <Link to='/'><p className="text-[12px
+    
+    ] md:normal-case md:text-xl font-semibold md:font-bold text-success ">MusicMasters</p></Link>
     </div>
   </div>
   <div className="navbar-center hidden lg:flex">
