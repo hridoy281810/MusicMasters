@@ -28,7 +28,7 @@ const Slider = () => {
         className="mySwiper"
       >
         <SwiperSlide><div className="slider-bg ">
-          <div className="bg-slate-600 bg-opacity-50 text-center md:h-[100vh] flex flex-col items-center justify-center p-24 gap-4">
+          <div className="bg-slate-600 bg-opacity-50 text-center   h-[100vh]  flex flex-col items-center justify-center p-10 md:p-24 gap-4">
           <h3 className="text-white uppercase font-bold  sm:text-2xl md:text-5xl">Discover the Rhythm of Music</h3>
           <p className="text-white  md:text-xl text-center banner-p-hidden ">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Optio illo dignissimos beatae dolorem earum incidunt aut fuga, recusandae porro officiis. </p>
          <Link to='/registration'> <button className="btn btn-sm  md:btn-md btn-accent ">Registration Now</button></Link>

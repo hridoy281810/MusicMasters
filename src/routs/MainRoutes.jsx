@@ -21,6 +21,7 @@ import AdminHome from "../Pages/Dashboard/AdminDashboard/AdminHome";
 import InstructorHome from "../Pages/Dashboard/InstructorDashboard/InstructorHome";
 import StudentHme from "../Pages/Dashboard/StudentDashboard/StudentHme";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
+import MusicalInstruments from "../Pages/MusicalInstruments/MusicalInstruments";
 
 export const router = createBrowserRouter([
        {
@@ -47,6 +48,10 @@ export const router = createBrowserRouter([
             {
                 path:'classes',
                 element:<ClassesPage></ClassesPage>
+            },
+            {
+                path:'musicalInstruments',
+                element: <MusicalInstruments></MusicalInstruments>
             }
         ]
        },

@@ -2,6 +2,7 @@ import React from 'react';
 import warnings from '../../assets/lottie/error (2).json'
 
 import Lottie from "lottie-react";
+// requirements
 const ErrorPage = () => {
     return (
         <div className="flex justify-center items-center mt-8 sm:mt-40 lg:mt-40  md:mt-40 ">

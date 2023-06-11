@@ -7,7 +7,7 @@ const Footer = () => {
         <div>
             <div>
             <footer className="bg-gray-800 text-white py-8">
-      <div className="container mx-auto">
+      <div className="container mx-auto overflow-x-hidden ">
         <div className="flex items-center justify-center mb-6">
           <img src={logo} alt="Music Masters Logo" className="w-16 md:w-32" />
         </div>
