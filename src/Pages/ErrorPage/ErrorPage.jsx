@@ -1,6 +1,6 @@
 import React from 'react';
 import warnings from '../../assets/lottie/error (2).json'
-import { Link } from 'react-router-dom';
+
 import Lottie from "lottie-react";
 const ErrorPage = () => {
     return (
