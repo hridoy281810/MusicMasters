@@ -2,7 +2,7 @@ import React from 'react';
 
 const PopularClassesSectionCard = ({cls}) => {
     const  {class_image_url,available_seats,instructor_name,instructor_email,category,number_of_students,price,class_name} = cls
-   
+ 
     return (
         <>
         <div className='flex border-e-2 '>

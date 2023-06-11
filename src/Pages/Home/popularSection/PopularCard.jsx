@@ -1,7 +1,6 @@
 import React from 'react';
 
 const PopularCard = ({cls}) => {
-    console.log(cls)
     const  {instructor_image_url,instructor_name,instructor_email,category,number_of_students} = cls
     return (
         <div className="card w-96 bg-base-100 shadow-xl ">

@@ -1,0 +1,7 @@
+.title-bg {
+    position: relative;
+      background-image: url('../../assets/Dashboard/Sound.jpg');
+      background-size: cover;
+      background-position: center;
+      height:200px;
+    }

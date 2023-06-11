@@ -3,10 +3,17 @@ import Swal from 'sweetalert2';
 import useAuth from '../../api2/useAuth';
 import { selectClass } from '../../api/selected';
 import useMySelected from '../../api2/useMySelected';
+import useInstructor from '../../api2/useInstructor';
+import useAdmin from '../../api2/useAdmin';
 
 const ClassesPageCard = ({cls}) => {
+  const [isAdmin] = useAdmin();
+    
+  const [isInstructor] = useInstructor();
+
     const {user,role} = useAuth()
     const [, refetch] = useMySelected()
+
     const  {_id,class_image_url,available_seats,instructor_name,instructor_email,category,number_of_students,price,class_name,instructor_image_url} = cls
 
     const [select,setSelect] = useState({
@@ -29,7 +36,7 @@ const ClassesPageCard = ({cls}) => {
         return   Swal.fire("Please log in to select the Class.!")
      
        }
-       if(role === 'admin' || role === 'instructor'){
+       if(isAdmin  || isInstructor){
        return Swal.fire("You are not allowed to select the class as an admin or instructor")
        }
        if(available_seats === 0){
@@ -64,7 +71,7 @@ const ClassesPageCard = ({cls}) => {
     <p>Available Seats: {available_seats}</p>
     <p>Price: $ {price}</p>
     <div className="card-actions ">
-      {available_seats === 0 || role === 'admin' || role === 'instructor' ? 
+      {available_seats <= 0 || isAdmin || isInstructor ? 
       <button disabled className="btn btn-block btn-disabled mt-4"> Class is Full </button>:
    <button onClick={handleSelect} className="btn btn-block btn-success text-white text-xl">Select</button>
       }

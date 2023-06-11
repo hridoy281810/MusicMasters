@@ -1,36 +1,11 @@
 import Swal from "sweetalert2";
 import useMySelected from "../../../api2/useMySelected";
+import { Link } from "react-router-dom";
+import SectionTitle from "../../../components/Dashboard/SectionTitle";
+import ConditionalMessage from '../../../components/Dashboard/ConditionalMessage';
 
 
 const MySelectedClasses = () => {
-  //   const {user} = useAuth()
-  //   const [myClasses,setMyClasses] = useState([])
-  //   const [loading,setLoading] = useState(false)
-  //   console.log(myClasses)
-  //   // const fetchSelected = ()=>{
-  //   //     getSelectedClass(user?.email)
-  //   //     .then(data=>{
-  //   //         setMyClasses(data)
-  //   //     })
-  //   //     .catch(error=>{
-  //   //         console.log(error)
-  //   //     })
-  //   // }
-  //   // useEffect(()=>{
-  //   //     fetchSelected()
-  //   // },[user])
-  // useEffect(()=>{
-  //   setLoading(true)
-  //   getSelectedClass(user?.email)
-  //   .then(data=>{
-  //       setMyClasses(data)
-  //       setLoading(false)
-  //   })
-  //   .catch(error=>{
-  //       console.log(error)
-  //   })
-  // },[user])
-
   const [mySelected,refetch] = useMySelected()
   const handleDelete = (myClass) =>{
     Swal.fire({
@@ -61,18 +36,20 @@ const MySelectedClasses = () => {
 
     return (
         <>
-            <div className="overflow-x-auto">
-  <table className="table">
+        <SectionTitle heading={"All classes selected by students"} />
+      {mySelected && mySelected.length > 0 ? <div className="w-full p-10">
+ <div className="overflow-x-auto">
+ <table className="table sm:min-w-full sm:table-auto rounded-lg border">
     {/* head */}
-    <thead>
+    <thead className=" bg-cyan-100 border rounded-lg shadow sm:p-0">
       <tr>
-        <th> # </th>
-        <th>Image</th>
-        <th>Class Title</th>
-        <th>Instructor Name</th>
-        <th>Price</th>
-        <th>Delete</th>
-        <th>Pay</th>
+        <th className="py-2"> # </th>
+        <th className="py-2" >Image</th>
+        <th className="py-2">Class Title</th>
+        <th className="py-2">Instructor Name</th>
+        <th className="py-2">Price</th>
+        <th className="py-2">Delete</th>
+        <th className="py-2">Pay</th>
 
       </tr>
     </thead>
@@ -97,7 +74,8 @@ const MySelectedClasses = () => {
           <button onClick={()=>handleDelete(myClass)} className="btn btn-secondary btn-sm">Delete</button>
         </td>
         <td>
-          <button className="btn btn-success btn-sm">Pay</button>
+          <Link to={`/dashboard/selected/${myClass._id}`}> <button className="btn btn-success btn-sm">Pay</button></Link>
+         
         </td>
       </tr>
         )}
@@ -106,7 +84,8 @@ const MySelectedClasses = () => {
 
     
   </table>
-</div>
+ </div>
+</div>:  <ConditionalMessage title={"No Selected Class Available"} subtitle={"Please Go Class Selecte First"} center={true} text={"Select Now"} location={'/classes'} />}
         </>
     );
 };

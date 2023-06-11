@@ -10,6 +10,7 @@ const ClassesPage = () => {
     const [classes,setClasses] = useState([])
     const [loading,setLoading] = useState(false)
     
+    
     useEffect(()=>{
         setLoading(true)
         getAllClasses()

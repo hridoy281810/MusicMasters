@@ -2,14 +2,18 @@
 import React from 'react';
 import { useQuery } from 'react-query';
 import Swal from 'sweetalert2';
+import useAxiosSecure from '../../../../api2/useAxiosSecure';
+import SectionTitle from '../../../../components/Dashboard/SectionTitle';
 // /users/admin/:id
 // /users/instructor/:id
 // handleMakeInstructor
 const ManageUsers = () => {
+  const [axiosSecure] = useAxiosSecure()
   
     const {data: users = [],refetch} = useQuery(['users'],async()=>{
-        const res = await fetch(`http://localhost:5000/users`)
-        return res.json()
+        const res = await axiosSecure.get(`/users`)
+
+        return res.data
     }) 
 
     const handleMakeInstructor = user =>{
@@ -32,6 +36,7 @@ const ManageUsers = () => {
       })
     }
     const handleMakeAdmin = user =>{
+      
       fetch(`http://localhost:5000/users/admin/${user._id}`,{
         method: 'PATCH'
       })
@@ -54,18 +59,21 @@ const ManageUsers = () => {
 
 
     return (
-        <div className="w-full">
-        <table className="table">
+       <>
+       <SectionTitle heading={"Admin Manage All Users"} />
+        <div className="w-full p-10">
+      <div className='overflow-x-auto'> 
+      <table className="table  sm:min-w-full sm:table-auto rounded-lg border">
           {/* head */}
-          <thead>
+          <thead className='bg-cyan-100 border rounded-lg shadow sm:p-0'>
             <tr>
-              <th> # </th>
-              <th>Image</th>
-              <th>Name</th>
-              <th>User Email</th>
-              <th>User Role</th>
-              <th>Make Instructor</th>
-              <th>Make Admin</th>
+              <th className="py-2"> # </th>
+              <th className="py-2">Image</th>
+              <th className="py-2">Name</th>
+              <th className="py-2">User Email</th>
+              <th className="py-2">User Role</th>
+              <th className="py-2">Make Instructor</th>
+              <th className="py-2">Make Admin</th>
             </tr>
           </thead>
           <tbody>
@@ -102,6 +110,8 @@ const ManageUsers = () => {
           
         </table>
       </div>
+      </div>
+       </>
     );
 };
 

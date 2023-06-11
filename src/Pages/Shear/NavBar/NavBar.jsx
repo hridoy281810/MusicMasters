@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import useAuth from '../../../api2/useAuth';
+import logo from '../../../assets/logo/logopng.png'
 const NavBar = () => {
     const {user,logOut} = useAuth()
     const handleLogOut = () => {
@@ -14,7 +15,7 @@ const NavBar = () => {
     <li><Link to='/'>Home</Link></li>
     <li><Link to='/instructors'>Instructor</Link></li>
     <li><Link to='/classes'>Classes</Link></li>
-    <li><Link to='/dashboard/mySelected'>Dashboard </Link></li>
+     {user &&   <li><Link to='/dashboard/mySelected'>Dashboard </Link></li>}
    </>
 
     return (
@@ -31,7 +32,8 @@ const NavBar = () => {
           
       </ul>
     </div>
-    <a className="btn btn-ghost normal-case text-xl">RhythmCraft Music School</a>
+    <img src={logo} className='w-28' alt="" />
+    <p className="btn btn-ghost normal-case text-xl">RhythmCraft Music School</p>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">
