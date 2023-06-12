@@ -11,7 +11,7 @@ const ManageClasses = () => {
     useTitle("Music Masters | Manage Classes")
     const { data: classes = [], refetch } = useQuery(['classes'], async () => {
         const res = await axiosSecure.get(`/classes/role`)
-        console.log(res.data)
+        // console.log(res.data)
         return res.data
     })
     if (classes.length === 0) {

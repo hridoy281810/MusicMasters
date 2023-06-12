@@ -10,7 +10,7 @@ const ManageClassesCard = ({cls,refetch}) => {
         })
           .then((res) => res.json())
           .then((data) => {
-            console.log(data);
+            // console.log(data);
             if (data.modifiedCount > 0) {
               refetch()
               Swal.fire({
@@ -39,7 +39,7 @@ const ManageClassesCard = ({cls,refetch}) => {
         })
           .then((res) => res.json())
           .then((data) => {
-            console.log(data);
+            // console.log(data);
             if (data.modifiedCount > 0) {
               refetch()
               Swal.fire({

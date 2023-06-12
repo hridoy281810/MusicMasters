@@ -9,6 +9,7 @@ import useTitle from '../../api2/useTitile';
 
 const Registration = () => {
   useTitle("Music Masters | Registration")
+  const [error, setError] = useState('')
   const { register, handleSubmit, reset, watch, formState: { errors } } = useForm();
   const { createUser, updateUserProfile } = useAuth()
   const navigate = useNavigate()
@@ -16,11 +17,11 @@ const Registration = () => {
     createUser(data.email, data.password)
       .then(result => {
         const loggedUser = result.user;
-        console.log(loggedUser)
+        // console.log(loggedUser)
         updateUserProfile(data.name, data.photoURL)
           .then(() => {
             const saveUser = { name: data.name, email: data.email, role: 'student', photo: data.photoURL }
-            console.log(saveUser)
+            // console.log(saveUser)
             fetch(`${import.meta.env.VITE_URL}/users`, {
               method: 'POST',
               headers: {
@@ -40,9 +41,11 @@ const Registration = () => {
           })
           .catch(error => {
             console.log(error)
+            setError(error.message)
           })
       }).catch(error => {
         console.log(error)
+        setError(error.message)
       })
   }
 
@@ -134,6 +137,7 @@ const Registration = () => {
                   </label>
                   <textarea {...register("address")} name="address" placeholder="Address" className="textarea textarea-bordered"></textarea>
                 </div>
+                <p className='text-red-700 label-text-alt mt-2'>{error}</p>
               </div>
               <div className="form-control mt-6">
                 <input type='submit' className="btn btn-primary" value={'Registration'} />

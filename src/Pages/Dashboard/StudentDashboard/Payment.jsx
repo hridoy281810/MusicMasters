@@ -9,10 +9,10 @@ const stripePromise = loadStripe(`${import.meta.env.VITE_Payment_PublishableKey}
 const Payment = () => {
     useTitle("Music Masters | Payment")
     const [mySelected] = useSelectedById()
-    console.log(mySelected)
+    // console.log(mySelected)
     const StringNumber = mySelected?.price
     const price = parseFloat(StringNumber)
-    console.log(price)
+    // console.log(price)
     const id = mySelected?._id;
     const payment_class_Id = [id];
     return (

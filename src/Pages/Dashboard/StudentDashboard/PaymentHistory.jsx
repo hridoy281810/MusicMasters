@@ -8,7 +8,7 @@ import useTitle from '../../../api2/useTitile';
 const PaymentHistory = () => {
   useTitle("Music Masters | Payment History")
   const [myEnrolledClasses] = useMyEnrolledClasses()
-  console.log(myEnrolledClasses)
+  // console.log(myEnrolledClasses)
   return (
     <>
       <SectionTitle heading={"student Payment History"} />

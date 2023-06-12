@@ -20,7 +20,7 @@ const ManageUsers = () => {
     })
       .then(res => res.json())
       .then(data => {
-        console.log(data)
+        // console.log(data)
         if (data.modifiedCount) {
           refetch()
           Swal.fire({
@@ -40,7 +40,7 @@ const ManageUsers = () => {
     })
       .then(res => res.json())
       .then(data => {
-        console.log(data)
+        // console.log(data)
         if (data.modifiedCount) {
           refetch()
           Swal.fire({

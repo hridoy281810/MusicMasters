@@ -9,7 +9,7 @@ import useTitle from "../../../api2/useTitile";
 const MySelectedClasses = () => {
   useTitle("Music Masters | My Selected Classes")
   const [mySelected, refetch] = useMySelected()
-  console.log(mySelected)
+  // console.log(mySelected)
   const handleDelete = (myClass) => {
     Swal.fire({
       title: 'Are you sure?',

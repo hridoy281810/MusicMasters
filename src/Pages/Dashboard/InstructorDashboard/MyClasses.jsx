@@ -7,7 +7,7 @@ import useTitle from '../../../api2/useTitile';
 const MyClasses = () => {
     const [myClasses] = useMyClasses()
     useTitle("Music Masters | My classes")
-    console.log(myClasses)
+    // console.log(myClasses)
     
     return (
         <>

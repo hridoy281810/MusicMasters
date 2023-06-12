@@ -21,7 +21,7 @@ const Feedback = ({ status, _id }) => {
     }
     addAdminFeedback(saveFeedback)
       .then(data => {
-        console.log(data)
+        // console.log(data)
         if (data.modifiedCount > 0) {
           Swal.fire({
             position: 'top-end',

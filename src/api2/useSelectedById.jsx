@@ -11,7 +11,7 @@ const useSelectedById = () => {
    enabled: !loading,
    queryFn: async()=>{
        const res = await fetch(`${import.meta.env.VITE_URL}/select/classes/${id}`)
-       console.log(res)
+      //  console.log(res)
     return res.json()
   }
 

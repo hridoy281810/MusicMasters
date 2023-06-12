@@ -21,7 +21,7 @@ const AddAClass = () => {
           ...classData,
           class_image_url: uploadedImage.data.url, instructor_image_url: user?.photoURL, status: 'pending', number_of_students: 0, total_enrolled_student: 0, role: 'instructor', adminFeedback: 'no feedback'
         };
-        console.log(classDataWithImage);
+        // console.log(classDataWithImage);
         axiosSecure.post('/classes', classDataWithImage)
           .then(data => {
             if (data.data.insertedId) {

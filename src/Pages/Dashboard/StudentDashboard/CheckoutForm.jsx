@@ -18,14 +18,14 @@ const CheckoutForm = ({ price, mySelected, payment_class_Id }) => {
   const [transactionId, setTransactionId] = useState('')
   const [, refetch] = useMySelected()
   const navigate = useNavigate()
-  console.log(mySelected)
+  // console.log(mySelected)
   useEffect(() => {
     if (price > 0) {
       axiosSecure.post('/create-payment-intent', { price })
         .then(res => {
-          console.log(res)
+          // console.log(res)
           const data = res.data.clientSecret
-          console.log(data)
+          // console.log(data)
 
           setClientSecret(data)
         })
@@ -45,7 +45,7 @@ const CheckoutForm = ({ price, mySelected, payment_class_Id }) => {
     if (card == null) {
       return;
     }
-    console.log(card)
+    // console.log(card)
     // Use your card Element with other Stripe.js APIs
     const { error, paymentMethod } = await stripe.createPaymentMethod({
       type: 'card',

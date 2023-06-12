@@ -45,7 +45,7 @@ const ClassesPageCard = ({ cls }) => {
     }
     axiosSecure.post(`${import.meta.env.VITE_URL}/selected`,select )
       .then(data => {
-        console.log(data)
+        // console.log(data)
         if (data.data.insertedId) {
           refetch();
           Swal.fire("Class selected!")

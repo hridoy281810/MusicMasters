@@ -3,7 +3,7 @@
 export const getAllClasses = async () => {
   const res = await fetch(`${import.meta.env.VITE_URL}/classes`)
   const classes = await res.json()
-  console.log(classes)
+  // console.log(classes)
   return classes;
 }
 export const getAllInstructors = async () => {
@@ -33,7 +33,7 @@ export const updateClasses = async (number_of_students, available_seats, id) => 
   })
 
   const data = await response.json()
-  console.log('new', data)
+  // console.log('new', data)
   return data
 }
 // export const getUploadClassByInstructors =async()=>{

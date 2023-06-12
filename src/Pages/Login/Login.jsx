@@ -9,6 +9,7 @@ import useTitle from '../../api2/useTitile';
 const Login = () => {
   const { register, handleSubmit, reset, watch, formState: { errors } } = useForm();
   const { login } = useAuth()
+  const [error, setError] = useState('')
   const navigate = useNavigate()
   let location = useLocation();
   let from = location.state?.from?.pathname || "/";
@@ -18,11 +19,14 @@ const Login = () => {
       .then(result => {
         const loggedUser = result.user;
         console.log(loggedUser)
+        //
         Swal.fire('User login successfully')
         navigate(from, { replace: true });
+      
       })
       .catch(error => {
         console.log(error)
+        setError(error.message)
       })
 
   }
@@ -54,6 +58,7 @@ const Login = () => {
                   <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                 </label>
               </div>
+              <p className='text-red-700 label-text-alt mt-2'>{error}</p>
               <div className="form-control mt-6">
                 <input type='submit' className="btn btn-primary" value={'Login'} />
               </div>
