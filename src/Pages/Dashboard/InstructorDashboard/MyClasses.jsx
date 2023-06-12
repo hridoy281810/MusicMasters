@@ -12,7 +12,7 @@ const MyClasses = () => {
     return (
         <>
         <SectionTitle  heading={"All classes added by instructor"}/>
-     {myClasses && myClasses.length > 0 ? <div className='grid grid-cols-1 md:grid-cols-2 gap-2  lg:gap-14 xl:gap-20 mb-8'>
+     {myClasses && myClasses.length > 0 ? <div className='grid grid-cols-1 md:grid-cols-2 gap-2  lg:gap-14 xl:gap-20 mb-8 p-10 border-2 border-dashed border-success'>
    
 
     {myClasses.map((myClass)=> <MyClassesCard key={myClass._key} myClass={myClass} /> )}
