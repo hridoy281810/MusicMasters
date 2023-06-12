@@ -8,7 +8,7 @@ const useMyEnrolledClasses = () => {
         queryKey: ['myEnrolledClasses', user.email],
         enabled: !loading,
         queryFn: async () => {
-            const res = await fetch(`http://localhost:5000/payments/${user?.email}`)
+            const res = await fetch(`${import.meta.env.VITE_URL}/payments/${user?.email}`)
             return res.json()
         }
     })

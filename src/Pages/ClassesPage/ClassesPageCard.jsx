@@ -1,14 +1,15 @@
 import React, { useState } from 'react';
 import Swal from 'sweetalert2';
 import useAuth from '../../api2/useAuth';
-import { selectClass } from '../../api/selected';
+// import { selectClass } from '../../api/selected';
 import useMySelected from '../../api2/useMySelected';
 import useInstructor from '../../api2/useInstructor';
 import useAdmin from '../../api2/useAdmin';
+import useAxiosSecure from '../../api2/useAxiosSecure';
 
 const ClassesPageCard = ({ cls }) => {
   const [isAdmin] = useAdmin();
-
+  const [axiosSecure] = useAxiosSecure()
   const [isInstructor] = useInstructor();
 
   const { user, role } = useAuth()
@@ -42,10 +43,10 @@ const ClassesPageCard = ({ cls }) => {
     if (available_seats === 0) {
       return Swal.fire("This class is already full not available seats")
     }
-    selectClass(select)
+    axiosSecure.post(`${import.meta.env.VITE_URL}/selected`,select )
       .then(data => {
         console.log(data)
-        if (data.insertedId) {
+        if (data.data.insertedId) {
           refetch();
           Swal.fire("Class selected!")
         }

@@ -22,7 +22,7 @@ const Home = () => {
         {darkTheme ? (
           <div><input onClick={toggleTheme} type="checkbox" className="toggle" checked /></div>
         ) : (
-          <input onClick={toggleTheme} type="checkbox" className="toggle" checked />
+          <input onClick={toggleTheme} type="checkbox" className="toggle"  />
         )}
       </div>
     </div>

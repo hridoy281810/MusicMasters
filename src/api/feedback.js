@@ -1,6 +1,6 @@
 
 export const addAdminFeedback = async (feedback) => {
-  const res = await fetch('http://localhost:5000/feedback', {
+  const res = await fetch(`${import.meta.env.VITE_URL}/feedback`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',

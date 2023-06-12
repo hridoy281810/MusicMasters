@@ -5,7 +5,7 @@ const ManageClassesCard = ({cls,refetch}) => {
     const  {class_image_url,available_seats,instructor_name,instructor_email,category,number_of_students,price,class_name,status,_id} = cls
 
     const handleClassApproveAdmin = (_id) => {
-        fetch(`http://localhost:5000/classes/approve/${_id}`, {
+        fetch(`${import.meta.env.VITE_URL}/classes/approve/${_id}`, {
           method: 'PATCH',
         })
           .then((res) => res.json())
@@ -34,7 +34,7 @@ const ManageClassesCard = ({cls,refetch}) => {
           });
       };
     const handleClassDenyAdmin = (_id) => {
-        fetch(`http://localhost:5000/classes/deny/${_id}`, {
+        fetch(`${import.meta.env.VITE_URL}/classes/deny/${_id}`, {
           method: 'PATCH',
         })
           .then((res) => res.json())

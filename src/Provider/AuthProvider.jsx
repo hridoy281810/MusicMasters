@@ -18,6 +18,7 @@ const AuthProvider = ({ children }) => {
 
     useEffect(() => {
         if (user) {
+            console.log(user)
             getRole(user?.email)
                 .then(data => setRole(data))
         }
@@ -53,7 +54,7 @@ const AuthProvider = ({ children }) => {
             setUser(currentUser);
             //  get and set jwt token 
             if (currentUser) {
-                axios.post('http://localhost:5000/jwt', { email: currentUser.email })
+                axios.post(`${import.meta.env.VITE_URL}/jwt`, { email: currentUser.email })
                     .then(data => {
                         console.log(data.data)
                         localStorage.setItem('access-token', data.data)

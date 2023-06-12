@@ -9,6 +9,7 @@ import useTitle from "../../../api2/useTitile";
 const MySelectedClasses = () => {
   useTitle("Music Masters | My Selected Classes")
   const [mySelected, refetch] = useMySelected()
+  console.log(mySelected)
   const handleDelete = (myClass) => {
     Swal.fire({
       title: 'Are you sure?',
@@ -20,7 +21,7 @@ const MySelectedClasses = () => {
       confirmButtonText: 'Yes, delete it!'
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/selected/${myClass._id}`, {
+        fetch(`${import.meta.env.VITE_URL}/selected/${myClass._id}`, {
           method: 'DELETE'
         })
           .then(res => res.json())

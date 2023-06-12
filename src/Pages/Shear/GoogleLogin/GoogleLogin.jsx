@@ -15,7 +15,7 @@ const GoogleLogin = () => {
             .then(result => {
                 const loggedUser = result.user;
                 const saveUser = { name: loggedUser?.displayName, email: loggedUser?.email, role: 'student' }
-                fetch(`http://localhost:5000/users`, {
+                fetch(`${import.meta.env.VITE_URL}/users`, {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'

@@ -10,7 +10,7 @@ const useSelectedById = () => {
    queryKey:[ 'mySelected',id],
    enabled: !loading,
    queryFn: async()=>{
-       const res = await fetch(`http://localhost:5000/select/classes/${id}`)
+       const res = await fetch(`${import.meta.env.VITE_URL}/select/classes/${id}`)
        console.log(res)
     return res.json()
   }
