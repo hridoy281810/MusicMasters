@@ -18,7 +18,7 @@ const Home = () => {
       <PopularClassesSection></PopularClassesSection>
       <PopularSection></PopularSection>
       <MusicalInstruments></MusicalInstruments>
-      <div className='flex justify-center py-8'>
+      <div className='flex justify-center py-8 top-5 banner-p-hidden  right-96 z-10  absolute'>
         {darkTheme ? (
           <div><input onClick={toggleTheme} type="checkbox" className="toggle" checked /></div>
         ) : (
