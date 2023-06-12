@@ -4,14 +4,15 @@ import { Link, useNavigate } from 'react-router-dom';
 import useAuth from '../../api2/useAuth';
 import Swal from 'sweetalert2';
 import GoogleLogin from '../Shear/GoogleLogin/GoogleLogin';
+import useTitle from '../../api2/useTitile';
 
 
 const Registration = () => {
+  useTitle("Music Masters | Registration")
   const { register, handleSubmit, reset, watch, formState: { errors } } = useForm();
   const { createUser, updateUserProfile } = useAuth()
   const navigate = useNavigate()
   const onSubmit = data => {
-
     createUser(data.email, data.password)
       .then(result => {
         const loggedUser = result.user;

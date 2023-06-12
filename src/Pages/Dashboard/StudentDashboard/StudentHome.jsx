@@ -1,8 +1,10 @@
 import React from 'react';
 import SectionTitle from '../../../components/Dashboard/SectionTitle';
 import ConditionalMessage from '../../../components/Dashboard/ConditionalMessage';
+import useTitle from '../../../api2/useTitile';
 
-const StudentHme = () => {
+const StudentHome = () => {
+    useTitle("Music Masters | Student Home")
     return (
         <div>
              <div>
@@ -13,4 +15,4 @@ const StudentHme = () => {
     );
 };
 
-export default StudentHme;
+export default StudentHome;

@@ -19,15 +19,16 @@ import AdminOlyRouts from "../PrivetRoute/AdminOlyRouts";
 import ManageUsers from "../Pages/Dashboard/AdminDashboard/ManageUsers/ManageUsers";
 import AdminHome from "../Pages/Dashboard/AdminDashboard/AdminHome";
 import InstructorHome from "../Pages/Dashboard/InstructorDashboard/InstructorHome";
-import StudentHme from "../Pages/Dashboard/StudentDashboard/StudentHme";
+
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import MusicalInstruments from "../Pages/MusicalInstruments/MusicalInstruments";
+import StudentHome from "../Pages/Dashboard/StudentDashboard/StudentHome";
 
 export const router = createBrowserRouter([
-       {
+    {
         path: '/',
         element: <MainLayout></MainLayout>,
-        children:[
+        children: [
             {
                 path: '/',
                 element: <Home></Home>
@@ -38,80 +39,80 @@ export const router = createBrowserRouter([
                 element: <Registration></Registration>
             },
             {
-                path:'login',
-                element:<Login></Login>
+                path: 'login',
+                element: <Login></Login>
             },
             {
-                path:'instructors',
-                element:<Instructors></Instructors>
+                path: 'instructors',
+                element: <Instructors></Instructors>
             },
             {
-                path:'classes',
-                element:<ClassesPage></ClassesPage>
+                path: 'classes',
+                element: <ClassesPage></ClassesPage>
             },
             {
-                path:'musicalInstruments',
+                path: 'musicalInstruments',
                 element: <MusicalInstruments></MusicalInstruments>
             }
         ]
-       },
-       {
+    },
+    {
         path: 'dashboard',
-       element:<PrivetRoute><DashboardLayout></DashboardLayout></PrivetRoute>,
-       children: [ 
-        {
-            path:'adminHome',
-            element:<AdminOlyRouts><AdminHome></AdminHome></AdminOlyRouts>
-        },
-        {
-            path:'allUsers',
-            element: <AdminOlyRouts><ManageUsers></ManageUsers></AdminOlyRouts>
-        },
-        {
-            path:'manageClasses',
-            element: <AdminOlyRouts><ManageClasses></ManageClasses></AdminOlyRouts>
-        },
-        {
-            path: 'instructorHome',
-            element: <InstructorOnlyRoutes><InstructorHome ></InstructorHome></InstructorOnlyRoutes>
-        },
-        {
-            path:'addClass',
-            element:<InstructorOnlyRoutes><AddAClass></AddAClass></InstructorOnlyRoutes>
-        },
-        {
-            path: 'myClasses',
-            element: <InstructorOnlyRoutes><MyClasses></MyClasses></InstructorOnlyRoutes>
-        },
-        {
-            path:'studentHome',
-            element:<StudentHme></StudentHme>
-        },
-        {
-            path: 'mySelected',
-            element:<MySelectedClasses></MySelectedClasses>
-        },
-        {
-            path: 'myEnrolled',
-            element: <MyEnrolledClasses></MyEnrolledClasses>
-        },
-        {
-            path: 'selected/:id',
-            element: <Payment></Payment>
-        },
-        {
-            path: 'paymentHistory',
-            element: <PaymentHistory></PaymentHistory>
-        }
-       
+        element: <PrivetRoute><DashboardLayout></DashboardLayout></PrivetRoute>,
+        children: [
+            {
+                path: 'adminHome',
+                element: <AdminOlyRouts><AdminHome></AdminHome></AdminOlyRouts>
+            },
+            {
+                path: 'allUsers',
+                element: <AdminOlyRouts><ManageUsers></ManageUsers></AdminOlyRouts>
+            },
+            {
+                path: 'manageClasses',
+                element: <AdminOlyRouts><ManageClasses></ManageClasses></AdminOlyRouts>
+            },
+            {
+                path: 'instructorHome',
+                element: <InstructorOnlyRoutes><InstructorHome ></InstructorHome></InstructorOnlyRoutes>
+            },
+            {
+                path: 'addClass',
+                element: <InstructorOnlyRoutes><AddAClass></AddAClass></InstructorOnlyRoutes>
+            },
+            {
+                path: 'myClasses',
+                element: <InstructorOnlyRoutes><MyClasses></MyClasses></InstructorOnlyRoutes>
+            },
+            {
+                path: 'studentHome',
+                element: <StudentHome></StudentHome>
+            },
+            {
+                path: 'mySelected',
+                element: <MySelectedClasses></MySelectedClasses>
+            },
+            {
+                path: 'myEnrolled',
+                element: <MyEnrolledClasses></MyEnrolledClasses>
+            },
+            {
+                path: 'selected/:id',
+                element: <Payment></Payment>
+            },
+            {
+                path: 'paymentHistory',
+                element: <PaymentHistory></PaymentHistory>
+            }
 
-       ]
-        
-       },
-       {
-        path:'*',
+
+        ]
+
+    },
+    {
+        path: '*',
         element: <ErrorPage></ErrorPage>
-       }
+    }
 
-      
+
 ])

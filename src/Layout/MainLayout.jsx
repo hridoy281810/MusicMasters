@@ -8,8 +8,8 @@ const MainLayout = () => {
     const onNavBarFooter = location.pathname.includes('login') || location.pathname.includes('registration' )
     return (
         < >
-           {onNavBarFooter || <NavBar></NavBar>}
-           <div className='container min-h-[calc(100vh-220px)]'> <Outlet></Outlet></div>
+         <div className='bg-base-100  container mx-auto'>  {onNavBarFooter || <NavBar ></NavBar>}</div>
+           <div className='container min-h-[calc(100vh-220px)] mx-auto'> <Outlet></Outlet></div>
          {onNavBarFooter||<Footer></Footer>}
         </>
     );

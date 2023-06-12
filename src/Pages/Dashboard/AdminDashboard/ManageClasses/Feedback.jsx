@@ -2,28 +2,27 @@ import React from 'react';
 import { Dialog, Transition } from '@headlessui/react'
 import { Fragment, useState } from 'react'
 import useAuth from '../../../../api2/useAuth';
-import {  addAdminFeedback } from '../../../../api/feedback';
+import { addAdminFeedback } from '../../../../api/feedback';
 import Swal from 'sweetalert2';
 
-const Feedback = ({status,_id}) => {
-    const {user} = useAuth()
-     let [isOpen, setIsOpen] = useState(false)
-     const [loading,setLoading] = useState(false)
- 
- const handleFeedback = event=>{
+const Feedback = ({ status, _id }) => {
+  const { user } = useAuth()
+  let [isOpen, setIsOpen] = useState(false)
+  const [loading, setLoading] = useState(false)
+
+  const handleFeedback = event => {
     event.preventDefault()
     setLoading(true)
     const form = event.target;
     const email = form.email.value;
     const feedback = form.feedback.value;
-    const saveFeedback ={
-        email,feedback,adminName:user?.displayName,photo:user?.displayURL,status: status, classId: _id
+    const saveFeedback = {
+      email, feedback, adminName: user?.displayName, photo: user?.displayURL, status: status, classId: _id
     }
-
     addAdminFeedback(saveFeedback)
-    .then(data=>{
+      .then(data => {
         console.log(data)
-        if(data.modifiedCount > 0){
+        if (data.modifiedCount > 0) {
           Swal.fire({
             position: 'top-end',
             icon: 'success',
@@ -34,7 +33,7 @@ const Feedback = ({status,_id}) => {
           setLoading(false)
           setIsOpen(false)
         }
-        else{
+        else {
           Swal.fire({
             position: 'top-end',
             icon: 'warning',
@@ -43,25 +42,19 @@ const Feedback = ({status,_id}) => {
             timer: 1500,
           });
         }
-       
-    })
-    .catch(error=>{
+      })
+      .catch(error => {
         console.log(error.message)
-      
-    })
-
- }  
-    
-
-    function closeModal() {
-      setIsOpen(false)
-    }
-  
-    function openModal() {
-      setIsOpen(true)
-    }
-    return (
-        <>
+      })
+  }
+  function closeModal() {
+    setIsOpen(false)
+  }
+  function openModal() {
+    setIsOpen(true)
+  }
+  return (
+    <>
       <div >
         <button
           type="button"
@@ -71,7 +64,6 @@ const Feedback = ({status,_id}) => {
           Send Feedback
         </button>
       </div>
-
       <Transition appear show={isOpen} as={Fragment}>
         <Dialog as="div" className="relative z-10" onClose={closeModal}>
           <Transition.Child
@@ -85,11 +77,9 @@ const Feedback = ({status,_id}) => {
           >
             <div className="fixed inset-0 bg-black bg-opacity-25" />
           </Transition.Child>
-
           <div className="fixed inset-0 overflow-y-auto">
             <div className="flex min-h-full items-center justify-center p-4 text-center">
-             
-             <Transition.Child
+              <Transition.Child
                 as={Fragment}
                 enter="ease-out duration-300"
                 enterFrom="opacity-0 scale-95"
@@ -106,43 +96,37 @@ const Feedback = ({status,_id}) => {
                     Admin Feedback For Deny The class
                   </Dialog.Title>
                   <div className="mt-2">
-                    
-           <form onSubmit={handleFeedback} className=''>
-           <div className="form-control">
-          <label className="label">
-            <span className="label-text">Admin Email</span>
-          </label>
-          <input type="email" name='email' readOnly defaultValue={user?.email} placeholder="email" className="input input-bordered" />
-        </div>
-                    <div className="form-control">
-          <label className="label">
-            <span className="label-text">Feedback Reason ('Approved/Denied')</span>
-          </label>
-          <textarea type="text" name='feedback' placeholder="write the approved/denied reason" className="input input-bordered p-4"  required/>
-        </div>
-        <div className="mt-4 flex gap-6">
-                    <input type="submit" className='btn btn-block btn-success' value='Send Instructor' />
-                   
-           
-                  </div>
-           </form>
-           <button className='btn btn-secondary btn-block btn-outline mt-2'
+                    <form onSubmit={handleFeedback} className=''>
+                      <div className="form-control">
+                        <label className="label">
+                          <span className="label-text">Admin Email</span>
+                        </label>
+                        <input type="email" name='email' readOnly defaultValue={user?.email} placeholder="email" className="input input-bordered" />
+                      </div>
+                      <div className="form-control">
+                        <label className="label">
+                          <span className="label-text">Feedback Reason ('Approved/Denied')</span>
+                        </label>
+                        <textarea type="text" name='feedback' placeholder="write the approved/denied reason" className="input input-bordered p-4" required />
+                      </div>
+                      <div className="mt-4 flex gap-6">
+                        <input type="submit" className='btn btn-block btn-success' value='Send Instructor' />
+                      </div>
+                    </form>
+                    <button className='btn btn-secondary btn-block btn-outline mt-2'
                       onClick={closeModal}
                     >
                       Close Modal
                     </button>
                   </div>
-
-                 
                 </Dialog.Panel>
               </Transition.Child>
-            
             </div>
           </div>
         </Dialog>
       </Transition>
     </>
-    );
+  );
 };
 
 export default Feedback;

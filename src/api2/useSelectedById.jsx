@@ -13,7 +13,6 @@ const useSelectedById = () => {
        const res = await fetch(`http://localhost:5000/select/classes/${id}`)
        console.log(res)
     return res.json()
-  
   }
 
   })

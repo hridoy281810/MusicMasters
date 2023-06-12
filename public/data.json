@@ -234,11 +234,11 @@
         "price": 400,
         "class_image_url": "https://i.ibb.co/VxJd39R/calss4.png",
         
-        "number_of_students": 0,
+        "number_of_students": 40,
         "total_enrolled_student": 0,
         "status": "pending",
         "role": "instructor",
-        "category": "popular",
+        "category": "approve",
         "adminFeedback": "no feedback"
       },
       {

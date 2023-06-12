@@ -1,12 +1,9 @@
 import React from 'react';
 import Swal from 'sweetalert2';
 import Feedback from './Feedback';
-
-const 
-ManageClassesCard = ({cls,refetch}) => {
+const ManageClassesCard = ({cls,refetch}) => {
     const  {class_image_url,available_seats,instructor_name,instructor_email,category,number_of_students,price,class_name,status,_id} = cls
-   
-    
+
     const handleClassApproveAdmin = (_id) => {
         fetch(`http://localhost:5000/classes/approve/${_id}`, {
           method: 'PATCH',

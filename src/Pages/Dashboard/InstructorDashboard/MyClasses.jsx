@@ -3,8 +3,10 @@ import useMyClasses from '../../../api2/useMyClasses';
 import ConditionalMessage from '../../../components/Dashboard/ConditionalMessage';
 import MyClassesCard from './MyClassesCard';
 import SectionTitle from '../../../components/Dashboard/SectionTitle';
+import useTitle from '../../../api2/useTitile';
 const MyClasses = () => {
     const [myClasses] = useMyClasses()
+    useTitle("Music Masters | My classes")
     console.log(myClasses)
     
     return (

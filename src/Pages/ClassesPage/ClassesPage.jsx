@@ -4,13 +4,13 @@ import { getAllClasses } from '../../api/classes';
 import Loader from '../../components/Loader';
 import ClassesPageCard from './ClassesPageCard';
 import Heading from '../../components/Heading';
+import useTitle from '../../api2/useTitile';
 
 const ClassesPage = () => {
     const {user} = useAuth()
     const [classes,setClasses] = useState([])
     const [loading,setLoading] = useState(false)
-    
-    
+ useTitle("Music Masters | All Class")
     useEffect(()=>{
         setLoading(true)
         getAllClasses()

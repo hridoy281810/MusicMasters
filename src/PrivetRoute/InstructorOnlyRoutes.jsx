@@ -4,17 +4,17 @@ import { Navigate, useLocation } from 'react-router-dom';
 import Loader from '../components/Loader';
 import useInstructor from '../api2/useInstructor';
 
-const InstructorOnlyRoutes = ({children}) => {
-    const {user,loading} = useAuth()
+const InstructorOnlyRoutes = ({ children }) => {
+    const { user, loading } = useAuth()
     const location = useLocation()
-    const [isInstructor,isInstructorLoading] = useInstructor()
-    if(loading || isInstructorLoading){
+    const [isInstructor, isInstructorLoading] = useInstructor()
+    if (loading || isInstructorLoading) {
         return <Loader />
     }
-    if(user && isInstructor){
+    if (user && isInstructor) {
         return children
     }
-        return <Navigate to='/login' state={{from:location}} replace> </Navigate>
+    return <Navigate to='/login' state={{ from: location }} replace> </Navigate>
 };
 
 export default InstructorOnlyRoutes;

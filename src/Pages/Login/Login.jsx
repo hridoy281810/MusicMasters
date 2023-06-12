@@ -4,37 +4,34 @@ import useAuth from '../../api2/useAuth';
 import { useForm } from 'react-hook-form';
 import Swal from 'sweetalert2';
 import GoogleLogin from '../Shear/GoogleLogin/GoogleLogin';
+import useTitle from '../../api2/useTitile';
 
 const Login = () => {
-    const { register, handleSubmit, reset, watch, formState: { errors } } = useForm();
-    const {login} = useAuth()
-    const navigate = useNavigate()
-    let location = useLocation();
-    let from = location.state?.from?.pathname || "/";
+  const { register, handleSubmit, reset, watch, formState: { errors } } = useForm();
+  const { login } = useAuth()
+  const navigate = useNavigate()
+  let location = useLocation();
+  let from = location.state?.from?.pathname || "/";
+  useTitle("Music Masters | Login")
+  const onSubmit = data => {
+    login(data.email, data.password)
+      .then(result => {
+        const loggedUser = result.user;
+        console.log(loggedUser)
+        Swal.fire('User login successfully')
+        navigate(from, { replace: true });
+      })
+      .catch(error => {
+        console.log(error)
+      })
 
-
-    const onSubmit = data => {
-  
-        login(data.email, data.password)
-        .then(result=>{
-            const loggedUser =  result.user;
-            console.log(loggedUser)
-            Swal.fire('User login successfully')
-            navigate(from, { replace: true });
-          })
-          .catch(error=>{
-            console.log(error)
-          })
-    
-    }
-
-    return (
-        <>
-        <div className=" flex justify-center md:pt-28  ">
-          <div className="shadow-2xl bg-base-100 flex-shrink-0 w-full max-w-sm rounded-2xl">
-            <div className=" ">
+  }
+  return (
+    <>
+      <div className=" flex justify-center md:pt-28  ">
+        <div className="shadow-2xl bg-base-100 flex-shrink-0 w-full max-w-sm rounded-2xl">
+          <div className=" ">
             <form onSubmit={handleSubmit(onSubmit)} className="card-body">
-             
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">Email</span>
@@ -57,7 +54,6 @@ const Login = () => {
                   <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                 </label>
               </div>
-
               <div className="form-control mt-6">
                 <input type='submit' className="btn btn-primary" value={'Login'} />
               </div>
@@ -65,11 +61,11 @@ const Login = () => {
               <GoogleLogin></GoogleLogin>
               <p><small>New Hear? <Link to={'/registration'}>please Registration</Link></small></p>
             </form>
-            </div>
           </div>
         </div>
-      </>
-    );
+      </div>
+    </>
+  );
 };
 
 export default Login;
